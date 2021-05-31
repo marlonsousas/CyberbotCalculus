@@ -47,6 +47,15 @@ class Ui_MainWindow(object):
         self.pushButton_2.setFont(font)
         self.pushButton_2.setStyleSheet("color: white;")
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setGeometry(QtCore.QRect(440, 390, 160, 71))
+        self.pushButton_3.clicked.connect(lambda: graph3d_new())
+        font = QtGui.QFont()
+        font.setFamily("Chilanka")
+        font.setPointSize(15)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setStyleSheet("color: white;")
+        self.pushButton_3.setObjectName("pushButton_2")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(130, 120, 381, 41))
         self.textEdit.setStyleSheet("color: white;\n"
@@ -61,7 +70,7 @@ class Ui_MainWindow(object):
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(30, 460, 101, 21))
+        self.label_3.setGeometry(QtCore.QRect(30, 460, 90, 19))
         self.label_3.setStyleSheet("color: white;")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
@@ -103,12 +112,23 @@ class Ui_MainWindow(object):
                 except:
                     print("Function Error")
 
+        def graph3d_new():
+            mytext = self.textEdit.toPlainText()
+            if not mytext:
+                pass
+            else:
+                try:
+                    graph3d(mytext)
+                except:
+                    print("Function Error")
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Cyberbot Calculus"))
-        self.label.setText(_translate("MainWindow", "Cyberbot Calculus ∞"))
+        self.label.setText(_translate("MainWindow", "Cyberbot Calculus∞"))
         self.pushButton.setText(_translate("MainWindow", "Derivate"))
         self.pushButton_2.setText(_translate("MainWindow", "Integral"))
+        self.pushButton_3.setText(_translate("MainWindow", "3D Graph"))
         self.label_3.setText(_translate("MainWindow", "Marlon Sousa"))
 import logo_rc
 
